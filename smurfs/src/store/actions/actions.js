@@ -22,8 +22,7 @@ export const postData = data => {
   return (dispatch) => {
     Axios.post('http://localhost:3333/smurfs', data)
       .then(res => {
-        debugger
-        dispatch({ type: POST_DATA, payload: data })
+        dispatch({ type: POST_DATA, payload: res.data })
       })
       .catch(err => {
         console.log(err)
