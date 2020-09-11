@@ -57,7 +57,6 @@ const SmurfForm = ({ postData }) => {
 }
 
 const mapStateToProps = (props) => {
-  console.log(props)
   return {
     smurfs: props.smurfs
   }

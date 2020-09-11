@@ -32,9 +32,11 @@ export const postData = data => {
 }
 
 export const deleteData = data => {
+  console.log(data)
   return (dispatch) => {
-    Axios.delete('http://localhost:3333/smurfs', data)
+    Axios.delete(`http://localhost:3333/smurfs/${data.id}`, data)
       .then(res => {
+        console.log(res.data)
         dispatch({ type: DELETE_DATA, payload: data })
       })
       .catch(err => {
