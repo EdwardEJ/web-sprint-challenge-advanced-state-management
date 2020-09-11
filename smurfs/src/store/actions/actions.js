@@ -12,5 +12,21 @@ export const getData = () => {
       .then(res => {
         dispatch({ type: GET_SUCCESS, payload: res.data })
       })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+}
+
+export const postData = data => {
+  return (dispatch) => {
+    Axios.post('http://localhost:3333/smurfs', data)
+      .then(res => {
+        debugger
+        dispatch({ type: POST_DATA, payload: data })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }
