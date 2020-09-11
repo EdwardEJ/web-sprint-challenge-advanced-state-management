@@ -1,4 +1,9 @@
-import { GET_DATA, GET_SUCCESS, POST_DATA } from '../actions'
+import {
+  GET_DATA,
+  GET_SUCCESS,
+  POST_DATA,
+  DELETE_DATA
+} from '../actions'
 
 const initialState = {
   smurfs: [{
@@ -24,6 +29,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         smurfs: action.payload
+      }
+    case DELETE_DATA:
+      return {
+        ...state,
+        smurfs: state.smurfs.filter(smurf => smurf.id !== action.payload.id)
       }
     default:
       return state
